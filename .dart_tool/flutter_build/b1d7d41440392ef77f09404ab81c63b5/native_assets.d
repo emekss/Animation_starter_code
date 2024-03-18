@@ -1,0 +1,1 @@
+ /Users/admin/Documents/GitHub/Animation_starter_code/.dart_tool/flutter_build/b1d7d41440392ef77f09404ab81c63b5/native_assets.yaml: 
