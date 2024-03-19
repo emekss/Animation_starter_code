@@ -34,14 +34,16 @@ class _AnimatedColorPalleteState extends State<AnimatedColorPallete> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Color Pallete Generator'),
+        title: const Text(
+          'Color Pallete Generator',
+        ),
       ),
       body: Center(
         child: Column(
           children: [
             for (Color color in currentPalette)
               AnimatedContainer(
-                duration: const Duration(milliseconds: 500),
+                duration: const Duration(milliseconds: 1000),
                 width: 100,
                 height: 100,
                 color: color,
