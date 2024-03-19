@@ -39,14 +39,15 @@ class _AnimatedColorPalleteState extends State<AnimatedColorPallete> {
       body: Center(
         child: Column(
           children: [
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.black,
-              margin: const EdgeInsets.all(8),
-            ),
+            for (Color color in currentPalette)
+              Container(
+                width: 100,
+                height: 100,
+                color: color,
+                margin: const EdgeInsets.all(8),
+              ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: regenetratePalette,
               child: const Text('Generate New Pallete'),
             )
           ],
