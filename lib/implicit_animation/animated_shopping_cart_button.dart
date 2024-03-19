@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AnimatedShoppingCart extends StatefulWidget {
   const AnimatedShoppingCart({super.key});
@@ -30,17 +29,14 @@ class _AnimatedShoppingCartState extends State<AnimatedShoppingCart> {
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 1000),
                 height: 60,
-                width: isExpanded ? 150 : 80,
+                width: isExpanded ? 200 : 80,
                 decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(10),
+                  color: isExpanded ? Colors.purple : Colors.blue,
+                  borderRadius: BorderRadius.circular(isExpanded ? 30 : 10),
                 ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.shopping_cart,
-                    color: Colors.white,
-                  ),
+                child: const Icon(
+                  Icons.shopping_cart,
+                  color: Colors.white,
                 ),
               ),
             )
