@@ -34,8 +34,8 @@ class _AnimatedShoppingCartState extends State<AnimatedShoppingCart> {
                   color: isExpanded ? Colors.purple : Colors.blue,
                   borderRadius: BorderRadius.circular(isExpanded ? 30 : 10),
                 ),
-                child: const Icon(
-                  Icons.shopping_cart,
+                child: Icon(
+                  isExpanded ? Icons.check_rounded : Icons.shopping_cart,
                   color: Colors.white,
                 ),
               ),
