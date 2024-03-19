@@ -40,7 +40,8 @@ class _AnimatedColorPalleteState extends State<AnimatedColorPallete> {
         child: Column(
           children: [
             for (Color color in currentPalette)
-              Container(
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 500),
                 width: 100,
                 height: 100,
                 color: color,
