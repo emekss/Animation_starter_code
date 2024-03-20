@@ -34,9 +34,19 @@ class _AnimatedShoppingCartState extends State<AnimatedShoppingCart> {
                   color: isExpanded ? Colors.purple : Colors.blue,
                   borderRadius: BorderRadius.circular(isExpanded ? 30 : 10),
                 ),
-                child: Icon(
-                  isExpanded ? Icons.check_rounded : Icons.shopping_cart,
-                  color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(
+                      isExpanded ? Icons.check_rounded : Icons.shopping_cart,
+                      color: Colors.white,
+                    ),
+                    if (isExpanded)
+                      const Text(
+                        'Added to Cart',
+                        style: TextStyle(color: Colors.white),
+                      )
+                  ],
                 ),
               ),
             )
