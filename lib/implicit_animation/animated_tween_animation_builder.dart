@@ -11,6 +11,6 @@ class PulsatingCircleAnimation extends StatefulWidget {
 class _PulsatingCircleAnimationState extends State<PulsatingCircleAnimation> {
   @override
   Widget build(BuildContext context) {
-    return const PulsatingCircleAnimation();
+    return const Scaffold();
   }
 }
