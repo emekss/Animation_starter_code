@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'explicit_animation/list_animations.dart';
+import 'explicit_animation/loading_animations.dart';
 import 'explicit_animation/login_animation.dart';
 import 'implicit_animation/animated_tween_animation_builder.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ListAnimation(),
+      home: LoadingAnimation(),
     );
   }
 }
