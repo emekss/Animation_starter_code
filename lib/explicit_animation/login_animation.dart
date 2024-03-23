@@ -11,6 +11,8 @@ class LoginScreenAnimation extends StatefulWidget {
 class _LoginScreenAnimationState extends State<LoginScreenAnimation>
     with SingleTickerProviderStateMixin {
   late Animation<double> imageFadeAnimation;
+  late Animation<Offset> slideAnimation;
+  late Animation<double> scaleAnimation;
   late AnimationController controller;
 
   @override
@@ -21,6 +23,22 @@ class _LoginScreenAnimationState extends State<LoginScreenAnimation>
       duration: const Duration(milliseconds: 2000),
     );
     imageFadeAnimation = Tween<double>(begin: 0, end: 1).animate(controller);
+    slideAnimation = Tween(
+      begin: const Offset(-1, -1),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(
+      parent: controller,
+      curve: Curves.ease,
+    ));
+
+    scaleAnimation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(CurvedAnimation(
+      parent: controller,
+      curve: Curves.ease,
+    ));
+
     controller.forward();
   }
 
@@ -41,25 +59,31 @@ class _LoginScreenAnimationState extends State<LoginScreenAnimation>
           ),
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Column(
-              children: [
-                const TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Username',
-                  ),
+            child: SlideTransition(
+              position: slideAnimation,
+              child: ScaleTransition(
+                scale: scaleAnimation,
+                child: Column(
+                  children: [
+                    const TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Username',
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    const TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Password',
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Login'),
+                    )
+                  ],
                 ),
-                const SizedBox(height: 20),
-                const TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                  ),
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Login'),
-                )
-              ],
+              ),
             ),
           ),
         ],
