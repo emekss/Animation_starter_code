@@ -17,7 +17,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoadingAnimation(),
+      home: LoadingAnimation(
+        progress: 1,
+        color: Colors.purple,
+      ),
     );
   }
 }
