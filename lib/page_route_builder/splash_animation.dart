@@ -23,8 +23,8 @@ class _SplashAnimationState extends State<SplashAnimation>
     controller.addListener(() {
       if (controller.isCompleted) {
         Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => const Destination(),
+          MyCustomRouteTransition(
+            route: const Destination(),
           ),
         );
         Timer(const Duration(milliseconds: 500), () {
@@ -73,6 +73,25 @@ class Destination extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Go Back'),
       ),
+      body: const Center(
+        child: Text('HELLOOOOO BAITTTCHHH'),
+      ),
     );
   }
+}
+
+class MyCustomRouteTransition extends PageRouteBuilder {
+  final Widget route;
+  MyCustomRouteTransition({required this.route})
+      : super(
+          pageBuilder: (context, animation, secondaryAnimation) {
+            return route;
+          },
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+        );
 }
