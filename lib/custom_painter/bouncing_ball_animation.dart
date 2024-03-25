@@ -14,6 +14,27 @@ class _BouncingBallAnimationState extends State<BouncingBallAnimation> {
       appBar: AppBar(
         title: const Text('Bouncing Ball Animation'),
       ),
+      body: const SafeArea(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [],
+      )),
     );
+  }
+}
+
+class BouncingBallPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawCircle(
+      Offset(size.width / 2, 0),
+      20,
+      Paint(),
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
   }
 }

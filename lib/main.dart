@@ -1,5 +1,5 @@
+import 'package:animation_starter_code/custom_painter/bouncing_ball_animation.dart';
 import 'package:flutter/material.dart';
-import 'page_route_builder/splash_animation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashAnimation(),
+      home: BouncingBallAnimation(),
     );
   }
 }
